@@ -5,24 +5,17 @@ using UnityEngine;
 public class SnowballSplash : MonoBehaviour
 {
 
+    public float projectileMaxDamage = 50f;
+    public float projectileExplosionForce = 100f;
+    public float projectileMaxLifeTime = 2f;
+    public float projectileExplotionRadius = 1f;
+
+    private void Start() {
+        Destroy(this.gameObject, projectileMaxLifeTime);
+    }
+
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Enemy") {
-            Destroy(GetComponent<Rigidbody>());
-            var temp = col.gameObject.GetComponent<EnemyHealth>();
-            var damage = PlayerThrow.throwDamagePerShot;
-            temp.TakeDamage(damage);
-            Destroy(this.gameObject);
-        }
 
-        if (col.gameObject.tag == "Obstacle") {
-            Destroy(GetComponent<Rigidbody>());
-            Destroy(this.gameObject);
-        }
-
-        if (col.gameObject.tag == "Ground") {
-            Destroy(GetComponent<Rigidbody>());
-            Destroy(this.gameObject, 0.3f);
-        }
     }
 }

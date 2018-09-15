@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerThrow : MonoBehaviour {
+public class PlayerShoot : MonoBehaviour {
 
     public GameObject projectile;
-    public GameObject projectileStartLocation;
-    public float force = 10f;
-    public float forceUpward = 5f;
+    public GameObject fireTransform;
+    public float minForce = 10f;
+    public float maxForce = 20f;
+    public float maxChargeTime = 0.75f;
 
     [SerializeField]
     public static int throwDamagePerShot = 50;
@@ -29,14 +30,13 @@ public class PlayerThrow : MonoBehaviour {
 
         if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
         {
-
             Throw();
         }
     }
 
     private void Throw(){
         timer = 0f;
-        var temp = Instantiate(projectile, projectileStartLocation.transform.position, transform.rotation);
-        temp.GetComponent<Rigidbody>().AddRelativeForce(0,forceUpward,force);
+        var temp = Instantiate(projectile, fireTransform.transform.position, transform.rotation);
+        temp.GetComponent<Rigidbody>().AddRelativeForce(0, 0, minForce);
     }
 }

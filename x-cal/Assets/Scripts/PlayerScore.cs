@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerScore : MonoBehaviour
 {
 
-    public static PlayerStats playerstats;
+    public static PlayerScore playerScore;
 
     public int score = 0;
     public Text scoreText;
