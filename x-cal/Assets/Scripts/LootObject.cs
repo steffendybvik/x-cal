@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class LootObject : MonoBehaviour {
 
-    private PlayerScore playerScore;
+    public GameManager gameManager;
+
     public int objectValue = 1;
 
     private void Start()
     {
-        playerScore = GetComponent<PlayerScore>();
+        gameManager = GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player") {
             Debug.Log("Ran over object");
-            Debug.Log(playerScore);
-            playerScore.AddScore(objectValue);
+            Debug.Log(gameManager.score);
+            //playerScore.AddScore(objectValue);
         }
     }
 

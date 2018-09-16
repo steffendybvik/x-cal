@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Enemy
+  - Obstacle
+  - LootObject
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - 
   - PostProcessing
   - Floor
-  - 
+  - Damageable
   - 
   - 
   - 

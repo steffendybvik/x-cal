@@ -3,20 +3,19 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int startingHealth = 100;
-    public int currentHealth;
-    public Image healthbar;
+    public float startingHealth = 100;
+    public float currentHealth;
+    public Slider healthbar;
 
 
-    CapsuleCollider capsuleCollider;
     bool isDead;
 
 
     void Awake()
     {
-        capsuleCollider = GetComponent<CapsuleCollider>();
 
         currentHealth = startingHealth;
+        healthbar.value = currentHealth / startingHealth;
     }
 
     void Update()
@@ -25,14 +24,13 @@ public class EnemyHealth : MonoBehaviour
     }
 
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
-
         if (isDead)
             return;
             
         currentHealth -= amount;
-        healthbar.fillAmount = currentHealth / startingHealth;
+        healthbar.value = currentHealth / startingHealth;
 
         if (currentHealth <= 0)
         {
@@ -45,9 +43,6 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         isDead = true;
-
-        // Turn the collider into a trigger so shots can pass through it
-        capsuleCollider.isTrigger = true;
 
         Destroy(this.gameObject);
     }
