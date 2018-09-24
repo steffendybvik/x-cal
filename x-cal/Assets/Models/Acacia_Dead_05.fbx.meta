@@ -1,15 +1,20 @@
 fileFormatVersion: 2
-guid: 6f54b6522aff1084aa8ec49e107c0274
+guid: a02a5a50f1e6a42a89915c8b5e0b96f6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Brown
+    2100000: Wood_Old
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Tree
-  externalObjects: {}
+    4300000: Plane.006
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_Old
+    second: {fileID: 2100000, guid: 20ca4c0089cf640adbf73e8564d6743d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

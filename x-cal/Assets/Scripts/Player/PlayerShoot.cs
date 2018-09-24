@@ -12,9 +12,6 @@ public class PlayerShoot : MonoBehaviour {
     public float maxChargeTime = 2f;
     public float timeBetweenBullets = 2.0f;
 
-    [SerializeField]
-    public static int damagePrShot = 50;
-
     private float timer;
     private float currentForce;
     private float chargeSpeed;

@@ -3,47 +3,45 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float startingHealth = 100;
-    public float currentHealth;
+    public float health = 10;
+    public float maxHealth = 100;
     public Slider healthbar;
 
+    private float elapsedTime = 0;
+    private float waitTime = 1.5f;
 
-    bool isDead;
+    void Awake() {
 
-
-    void Awake()
-    {
-
-        currentHealth = startingHealth;
-        healthbar.value = currentHealth / startingHealth;
-    }
-
-    void Update()
-    {
-
+        healthbar.value = health / maxHealth;
     }
 
 
     public void TakeDamage(float amount)
     {
-        if (isDead)
-            return;
             
-        currentHealth -= amount;
-        healthbar.value = currentHealth / startingHealth;
+        health -= amount;
+        healthbar.value = health / maxHealth;
 
-        if (currentHealth <= 0)
-        {
+        if (health <= 0) {
             Die();
         }
 
     }
 
+    public void Heal(float amount) {
+        elapsedTime += Time.deltaTime;
 
-    void Die()
-    {
-        isDead = true;
+        if (elapsedTime >= waitTime) {
 
+            health += amount;
+            health = Mathf.Clamp(health, 0, 100);
+            healthbar.value = health / maxHealth;
+            elapsedTime = 0f;
+        }
+    }
+
+
+    void Die() {
         Destroy(this.gameObject);
     }
 }

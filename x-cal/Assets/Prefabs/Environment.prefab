@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 33541473152952766}
   - component: {fileID: 23708542236016150}
   - component: {fileID: 64405149663271872}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Column02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 23275465261390206}
   - component: {fileID: 95791896805068648}
   - component: {fileID: 64535443280863002}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Column01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4194896368994018}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ MonoBehaviour:
   displayGridGizmos: 0
   unwalkableMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 2048
   gridWorldSize: {x: 100, y: 100}
   nodeRadius: 1
 --- !u!114 &114999487282141738

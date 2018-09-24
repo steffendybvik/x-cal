@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SnowballSplash : MonoBehaviour
+public class ProjectileSplashDamage : MonoBehaviour
 {
     public ParticleSystem splashParticles;
     public LayerMask damageable;
 
     public float projectileMaxDamage = 100f;
     public float projectileExplosionForce = 1000f;
-    public float projectileMaxLifeTime = 2f;
     public float projectileExplotionRadius = 5f;
 
     private void Start() {
